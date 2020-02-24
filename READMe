@@ -17,6 +17,8 @@ $ go get -u github.com/golang/protobuf/protoc-gen-go
 gRPC-Go: (https://github.com/grpc/grpc-go)
 $ go get -u google.golang.org/grpc
 
+CLI:  (https://github.com/ktr0731/evans) -> Follow this link for the docs.
+$ go get github.com/ktr0731/evans
 
 Making a cluster:
 
@@ -31,3 +33,7 @@ Making a cluster:
 9.Type in a username and password
 10.Click on "Create MongoDB User"...."Choose a connection Method"..."Connect Your application"
 11.Then copy the Connection string that appears
+
+
+To change the default port:
+-> Run command "evans -p 50051 -r"
