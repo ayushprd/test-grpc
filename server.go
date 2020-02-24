@@ -17,6 +17,7 @@ import (
 
 	stetpb "github.com/user/basic-crud/proto"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 var collection *mongo.Collection
@@ -176,7 +177,9 @@ func main() {
 	opts := []grpc.ServerOption{}
 	s := grpc.NewServer(opts...)
 	stetpb.RegisterStetServiceServer(s, &server{})
-
+	
+	reflection.Register(s)
+	
 	go func() {
 		fmt.Println("Starting server...")
 		if err := s.Serve(lis); err != nil {
